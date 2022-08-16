@@ -19,7 +19,7 @@ class Venue(db.Model):
     seeking_description = db.Column(db.Text)
     website_link = db.column(db.String(120))
     shows = db.relationship("Show", backref="shows",
-                                cascade="all, delete", lazy=True)
+                            cascade="all, delete", lazy=True)
 
 
 class Artist(db.Model):
@@ -38,7 +38,7 @@ class Artist(db.Model):
         db.Boolean, nullable=False, default=False)
     seeking_description = db.Column(db.Text)
     shows = db.relationship("Show", backref="show_list",
-                                cascade="all, delete", lazy=True)
+                            cascade="all, delete", lazy=True)
 
 
 class Show(db.Model):
