@@ -246,10 +246,10 @@ def validate_phone_number(field):
         raise ValidationError("Invalid Phone Number")
     else:
         try:
-            input_number = phonenumbers.parse(field)
-            if not (phonenumbers.is_valid_number(input_number)):
+            phone_number = phonenumbers.parse(field)
+            if not (phonenumbers.is_valid_number(phone_number)):
                 raise ValidationError('Invalid phone number.')
         except:
-            input_number = phonenumbers.parse("+1" + field)
-            if not (phonenumbers.is_valid_number(input_number)):
+            phone_number = phonenumbers.parse("+1" + field)
+            if not (phonenumbers.is_valid_number(phone_number)):
                 raise ValidationError('Invalid phone number.')
