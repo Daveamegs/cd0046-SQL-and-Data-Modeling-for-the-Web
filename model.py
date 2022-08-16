@@ -12,7 +12,7 @@ class Venue(app.db.Model):
     phone = app.db.Column(app.db.String(120), unique=True)
     genres = app.db.Column(app.db.ARRAY(app.db.String(50)), nullable=False)
     image_link = app.db.Column(app.db.String(500))
-    facebook_link = app.db.Column(app.db.String(120))
+    facebook_link = app.db.Column(app.db.String(120), unique=True)
     seeking_talent = app.db.Column(
         app.db.Boolean, nullable=False, default=False)
     seeking_description = app.db.Column(app.db.Text)
@@ -28,10 +28,10 @@ class Artist(app.db.Model):
     name = app.db.Column(app.db.String, nullable=False, unique=True)
     city = app.db.Column(app.db.String(120))
     state = app.db.Column(app.db.String(120))
-    phone = app.db.Column(app.db.String(120))
+    phone = app.db.Column(app.db.String(120), unique=True)
     genres = app.db.Column(app.db.ARRAY(app.db.String(50)), nullable=False)
     image_link = app.db.Column(app.db.String(500))
-    facebook_link = app.db.Column(app.db.String(120))
+    facebook_link = app.db.Column(app.db.String(120), unique=True)
     website_link = app.db.Column(app.db.String(120), nullable=True)
     seeking_venue = app.db.Column(
         app.db.Boolean, nullable=False, default=False)
